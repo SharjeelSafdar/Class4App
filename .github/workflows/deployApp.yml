@@ -33,4 +33,4 @@ jobs:
       run: npm install -g surge
     
     - name: Deplo to Surge
-      run: surge ./build react-app-states.surge.sh --tooken ${{ SURGE_TOKEN }}
+      run: surge ./build react-app-states.surge.sh --tooken ${{ secrets.SURGE_TOKEN }}
