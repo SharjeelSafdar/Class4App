@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Install NodeJS
-      uses: actions/node@v2-beta
+      uses: actions/setup-node@v2-beta
       with: { version: 12 }
     
     - name: Install Yarn
