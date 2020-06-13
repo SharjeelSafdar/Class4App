@@ -2,9 +2,9 @@ name: Deploy React App
 
 # Controls when the action will run. Triggers the workflow on push event
 # but only for the master branch
-on: 
+on:
   push: 
-    branches: [ master ]
+    branch: [master]
 
 jobs:
   # This workflow builds the react app on a Ubuntu VM and deploys it to surge.
@@ -20,7 +20,7 @@ jobs:
     
     - name: Install NodeJS
       uses: actions/setup-node@v2-beta
-      with: { version: 12 }
+      with: {node-version: 12}
     
     - name: Install Yarn
       uses: borales/actions-yarn@v2.0.0
@@ -33,4 +33,4 @@ jobs:
       run: npm install -g surge
     
     - name: Deplo to Surge
-      run: surge ./build react-app-states.surge.sh --tooken ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build react-app-states.surge.sh --token ${{ secrets.SURGE_TOKEN }}
